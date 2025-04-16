@@ -1,1 +1,86 @@
-<p>exercicios works!</p>
+<h2>Exercicios</h2>
+
+<h3>Exercicio 1</h3>
+
+<label for="mes">Escolha um mês</label>
+<input type="number" id="mes" (change)="trocarValor($event)" />
+
+@switch (mes) { @case (1) {
+<p>janeiro</p>
+} @case (2) {
+<p>fevereiro</p>
+} @case (3) {
+<p>março</p>
+} @case (4) {
+<p>abril</p>
+} @case (5) {
+<p>maio</p>
+} @case (6) {
+<p>junho</p>
+} @case (7) {
+<p>julho</p>
+} @case (8) {
+<p>agosto</p>
+} @case (9) {
+<p>setembro</p>
+} @case (10) {
+<p>outubro</p>
+} @case (11) {
+<p>novembro</p>
+} @case (12) {
+<p>dezembro</p>
+} @default {
+<p>não tem esse mes</p>
+} }
+<h3>Exercicio 2</h3>
+<ul>
+  @for(item of itens; track $index){
+  <li>{{ item }}</li>
+  }@empty {
+  <p>Nenhum item na lista</p>
+  }
+</ul>
+
+<h3>Exercicio 3</h3>
+<p>Idade: {{ idade }}</p>
+<button (click)="aumenta()">+</button>
+<button (click)="diminui()">-</button>
+@if(idade>=18){
+<p>Acesso permitido</p>
+}@else {
+<p>Acesso negado</p>
+}
+<h3>Exercicio 4</h3>
+<ul>
+  @for(tarefa of tarefas; track $index){
+  <li>
+    {{ tarefa }}
+    <button (click)="eliminaTarefa(tarefa)">Remover</button>
+  </li>
+  }@empty {
+  <p>Nenhum item na lista</p>
+  }
+</ul>
+
+<h3>Exercio 5</h3>
+<label for="status">Escolha um Status</label>
+<select id="status" (change)="trocarStatus($event)">
+  <option value="pendente">Pendente</option>
+  <option value="enviado">Enviado</option>
+  <option value="entregue">Entregue</option>
+</select>
+
+@switch (status) {
+    @case('pendente'){
+<p>Aguardando confirmação</p>
+    }
+    @case('enviado'){
+<p>Pedido a caminho</p>
+    }
+    @case('entregue'){
+<p>Pedido entregue</p>
+    }@default {
+        <p>Status desconhecido</p>
+    }
+    
+}
