@@ -14,9 +14,32 @@ export class ExerciciosComponent {
   idade: number = 19;
   tarefas = ['Estudar Angular', 'Fazer exercicios', 'Revisar Código'];
   status: string = '';
+  usuarios = [
+    { nome: 'Ana', idade: 25 },
+    { nome: 'Carlos', idade: 30 }
+  ];
+  credenciais = {email: "", senha: '', enviado: false}
+   valor:number | string = 1
+   produtos = [ {nome: "Notebook", preco: 3000, promocao: true}, {nome: "Mouse", preco: 50, promocao: false}];
+   operacao = "";
+   valor1:number = 0;
+   valor2:number = 0 ;
+
   trocarValor(event: Event): void {
     const elemento = event.target as HTMLInputElement;
     this.mes = parseInt(elemento.value);
+  }
+  trocarValor1(event: Event): void {
+    const elemento = event.target as HTMLInputElement;
+    this.valor1 = parseInt(elemento.value);
+  }
+  trocarValor2(event: Event): void {
+    const elemento = event.target as HTMLInputElement;
+    this.valor2 = parseInt(elemento.value);
+  }
+  mudaOperacao(event: Event): void {
+    const elemento = event.target as HTMLInputElement;
+    this.operacao =elemento.value;
   }
 
   aumenta(): void {
@@ -33,4 +56,5 @@ export class ExerciciosComponent {
     const elemento = event.target as HTMLInputElement
     this.status = elemento.value
       }
+     
 }
